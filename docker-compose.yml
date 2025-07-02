@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      # Mounts the current directory to the container.
+      # This allows for code changes to be reflected instantly (hot-reloading)
+      # and ensures the SQLite database file (escola.db) is persisted on your host machine.
+      - .:/app
